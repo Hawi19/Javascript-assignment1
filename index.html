@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+
+    <h2>Area of Triangle</h2>
+    <form>
+    <label>Side 1  <input type="number" id="s1" value="5"> </label>
+   <br>
+    <label>Side 2  <input type="number" id="s2" value="6"> <br></label>
+   
+    <label>Side 3 <input type="number" id="s3" value="7"> <br></label>
+    
+    <button type="button" onclick="tri()">Calculate</button>
+</form>
+<p >Area: <span id="AR"></span></p>
+
+
+
+    <h2>Multiplication and Division of two Numbers</h2>
+    <form>
+        <label for="firstNumber">First number</label><input type="number" id="firstNumber"> <br>
+        <label for="secondNumber">Second number</label><input type="number" id="secondNumber"> <br>
+        <input type="button" value="Calculate" onclick="calculate()">
+       
+    </form>
+    <p>Product: <span id="mul"></span></p>
+    <p> Quotient: <span id="div"></span></p>
+    <br>
+    <br>
+    <h2>Adding Javascript infront of another string</h2>
+    <label>Enter text <input type="text" id="txt"></label>
+    <button type="button" onclick="pre()">Add prefix</button>
+    <p id="result"></p>
+    <script>
+          function tri() {
+            const side1 = document.getElementById("s1").value;
+            const side2 = document.getElementById("s2").value;
+            const side3 = document.getElementById("s3").value;
+            const s =(Number(side1) + Number(side2) + Number (side3))/2;
+            const area = Math.sqrt(s*(s - side1)*(s - side2)*(s - side3));
+           
+           document.getElementById("AR").innerHTML = area;
+        }
+        function calculate () {
+            const n1 = document.getElementById("firstNumber").value;
+            const n2 = document.getElementById("secondNumber").value;
+            document.getElementById("mul").innerHTML = n1 * n2 ;
+            document.getElementById("div").innerHTML = n1 / n2;
+            
+        }
+        function pre() {
+            const text = document.getElementById("txt").value;
+            document.getElementById("result").innerHTML = "Javascript" + " " + text;
+
+        }
+      
+    
+    </script>
+</body>
+</html>
